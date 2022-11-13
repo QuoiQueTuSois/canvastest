@@ -1,14 +1,21 @@
 export default function App() {
+
+    const img = new Image();
+    img.src = '/src/cavil.png'
     const canvas: HTMLCanvasElement = document.createElement("canvas")
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight - 5
-    // draw canvas
+    canvas.width = 500;
+    canvas.height = 500;
+    // 그리기
     const ctx: CanvasRenderingContext2D = canvas.getContext("2d")!
-    ctx.fillStyle = "black"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-    ctx.font = '62px Times new roman'
-    ctx.fillStyle = "white"
-    ctx.fillText("Clapping", 30, 80)
-    ctx.fillText("Music", 150, 150)
+    ctx.beginPath();
+    ctx.moveTo(30, 96);
+    ctx.lineTo(70, 66);
+    ctx.lineTo(103, 76);
+    ctx.lineTo(170, 15);
+    ctx.stroke();
+    ctx.drawImage(img,100,100)
+    ctx.stroke()
+   
+
     return canvas
 }
